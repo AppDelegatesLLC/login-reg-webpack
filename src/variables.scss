@@ -29,7 +29,7 @@ $gray-light:                #818a91;
 $gray-lighter:              #eceeef;
 $gray-lightest:             #f7f7f9;
 
-$brand-primary:             #0275d8;
+$brand-primary:             #eda827;//TS $brand-primary:             #0275d8;
 $brand-success:             #5cb85c;
 $brand-info:                #5bc0de;
 $brand-warning:             #f0ad4e;
@@ -76,6 +76,10 @@ $spacers: (
         3: (
                 x: ($spacer-x * 3),
                 y: ($spacer-y * 3)
+        ),
+        10: (
+                x: ($spacer-x * 10),
+                y: ($spacer-y * 10)
         )
 );
 $border-width: 1px;
@@ -86,7 +90,7 @@ $border-width: 1px;
 // Settings for the `<body>` element.
 
 $body-bg:    #fff;
-$body-color: $gray-dark;
+$body-color: $gray-lightest;//TS $body-color: $gray-dark;
 
 
 // Links
@@ -143,7 +147,7 @@ $grid-gutter-widths: (
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-sans-serif: "UnitedSansRegularMedium", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;//TS
 $font-family-serif:      Georgia, "Times New Roman", Times, serif;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $font-family-base:       $font-family-sans-serif;
@@ -176,7 +180,7 @@ $display3-weight: 300;
 $display4-weight: 300;
 
 $headings-margin-bottom: ($spacer / 2);
-$headings-font-family:   "Rajdhani", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; // Was inherit;
+$headings-font-family:  "UnitedSansRegularBold", "Rajdhani", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; //TS inherit;
 
 $headings-font-weight:   500;
 $headings-line-height:   1.1;

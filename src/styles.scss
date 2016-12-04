@@ -1,7 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'variables';
 
+/**
+ * Constants (w/out bootstrap depenencies)
+ */
+
+$fixed-bg-height: 1080px;
+
 @import '~bootstrap/scss/bootstrap';
+
+/**
+ * Utilities
+ */
+
+@mixin img-bg($file, $height) {
+  /* Set a specified height, or the minimum height for the background image */
+  min-height: $height;
+  /* The background image */
+  background-image: url($file);
+  /* Set background image to fixed (don't scroll along with the page) */
+  background-attachment: fixed;
+  /* Center the background image */
+  background-position: center;
+  /* Set the background image to no repeat */
+  background-repeat: no-repeat;
+  /* Scale the background image to be as large as possible */
+  background-size: cover;
+  /* This fails on 16:9 because of left/right padding */
+  //background-size: auto 100%;
+  /* This fails on portrait because of top/bottom padding */
+  //background-size: 100% auto;
+}
+
+.btn-inside-lightest.btn-outline-primary {
+  color: $gray-lightest;
+}
+
+/**
+ * Spacing
+ *
+ * Our own spin on horiz/vert spacing.
+ * {margin}{sides}-{space} = marginauto-auto
+ */
+.ma-a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%); /* IE 9 */
+  -webkit-transform: translate(-50%, -50%); /* Safari */
+  transform: translate(-50%, -50%); /* Standard syntax */
+}
+
+/**
+ * Fonts
+ */
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Rajdhani:400,500');
 
@@ -47,3 +99,19 @@
   src: url('/fonts/SF-UI-Display-Medium.otf');
 }
 
+/**
+ * App Specifics
+ */
+
+body {
+  background: url('/assets/bkgrd_slate_fuzzy.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
+  background-size: cover;
+  /*background-size: 100% 100%;*/
+}
+
+.fixed-bg-home {
+  @include img-bg('/assets/bkgrd_drew_fuzzy.jpg', $fixed-bg-height);
+}
