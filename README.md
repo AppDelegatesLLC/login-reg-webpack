@@ -2,6 +2,75 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.21.
 
+`$ ng new --style=scss --routing login-reg-webpack`
+
+
+## Font Awesome
+`$ npm install --save font-awesome`
+
+Add to styles in angular-cli
+`        "../node_modules/font-awesome/css/font-awesome.min.css",`
+
+`npm install --save angular2-fontawesome`
+
+Edit app.module.ts
+import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
+
+@NgModule({
+  ...
+  imports: [
+    Angular2FontawesomeModule,
+  ...
+})
+
+Edit app.component.html
+`<fa [name]="'id-card'" [size]=3 [border]=true></fa>
+ <i class="fa fa-rocket fa-2x"></i>`
+
+
+## Bootstrap 4 components, powered by Angular 2
+`$ npm install --save bootstrap@4.0.0-alpha.5`
+
+Above pulled in jquery and tether, add all to scripts in angular-cli
+`
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/tether/dist/js/tether.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+`
+
+`npm install --save @ng-bootstrap/ng-bootstrap`
+
+Edit app.module.ts
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+@NgModule({
+  ...
+  imports: [
+    NgbModule.forRoot(),
+  ...
+})
+
+Edit app.component.ts
+`import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';`
+
+Edit app.component.html
+`<p>Simple datepicker</p>
+
+<ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
+
+<hr/>
+
+<button class="btn btn-sm btn-outline-primary" (click)="selectToday()">Select Today</button>
+<button class="btn btn-sm btn-outline-primary" (click)="dp.navigateTo()">To current month</button>
+<button class="btn btn-sm btn-outline-primary" (click)="dp.navigateTo({year: 2013, month: 2})">To Feb 2013</button>
+
+<hr/>
+
+<pre>Month: {{ date.month }}.{{ date.year }}</pre>
+<pre>Model: {{ model | json }}</pre>`
+
+`npm install --save moment`
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 

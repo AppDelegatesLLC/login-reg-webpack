@@ -1,4 +1,44 @@
 <h1>
   {{title}}
 </h1>
+<h2>
+  {{timewas}}
+</h2>
+<p style="font-family: Poppins">Poppins</p>
+<p style="font-family: SFDisplayRegular">SFDisplayRegular</p>
+
 <router-outlet></router-outlet>
+
+
+<div class="container">
+  <div class="row">
+      <div class="col-sm-4">
+        <ngb-progressbar value="75"></ngb-progressbar>
+      </div>
+      <div class="col-sm-4">
+        <ngb-progressbar striped="true" value="22" type="warning">22%</ngb-progressbar>
+      </div>
+      <div class="col-sm-4">
+        <ngb-progressbar striped="true" class="active" max="200" value="166" type="danger"><i>166 / 200</i></ngb-progressbar>
+      </div>
+  </div>
+</div>
+
+
+<fa [name]="'id-card'" [size]=3 [border]=true></fa>
+<i class="fa fa-rocket fa-2x"></i>
+
+<p>Simple datepicker</p>
+
+<ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
+
+<hr/>
+
+<button class="btn btn-sm btn-outline-primary" (click)="selectToday()">Select Today</button>
+<button class="btn btn-sm btn-outline-primary" (click)="dp.navigateTo()">To current month</button>
+<button class="btn btn-sm btn-outline-primary" (click)="dp.navigateTo({year: 2013, month: 2})">To Feb 2013</button>
+
+<hr/>
+
+<pre>Month: {{ date.month }}.{{ date.year }}</pre>
+<pre>Model: {{ model | json }}</pre>

@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'variables';
+
+@import '~bootstrap/scss/bootstrap';
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Rajdhani:400,500');
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+  font-family: "UnitedSansRegularMedium";
+  src: url('/fonts/UnitedSansRgMd.otf');
+}
+
+@font-face {
+  font-family: "UnitedSansRegularBold";
+  src: url('/fonts/UnitedSansRgBd.otf');
+}
+
+@font-face {
+  font-family: "UnitedSansRegularHeavy";
+  src: url('/fonts/UnitedSansRgHv.otf');
+}
+
+@font-face {
+  font-family: "SFTextRegular";//"SF UI Text"
+  src: url('/fonts/SF-UI-Text-Regular.otf');
+}
+
+@font-face {
+  font-family: "SFTextMedium";
+  src: url('/fonts/SF-UI-Text-Medium.otf');
+}
+
+@font-face {
+  font-family: "SFDisplayRegular";//"SF UI Display"
+  src: url('/fonts/SF-UI-Display-Regular.otf');
+}
+
+@font-face {
+  font-family: "SFDisplayMedium";
+  src: url('/fonts/SF-UI-Display-Medium.otf');
+}
+
